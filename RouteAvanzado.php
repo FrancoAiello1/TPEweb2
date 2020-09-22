@@ -10,7 +10,6 @@
 
     // rutas
     $r->addRoute("home", "GET", "TasksController", "Home");
-    $r->addRoute("mermelada", "GET", "TasksController", "Home");
 
     //Esto lo veo en TasksView
     $r->addRoute("insert", "POST", "TasksController", "InsertTask");

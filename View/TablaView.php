@@ -115,13 +115,13 @@
             
             </body>
             
-            </html>'
+            </html>';
+
+            echo $html;
         }
-
-
-
-
-
+        function ShowHomeLoc(){
+            header("Location: ".BASE_URL."home");
+        }
     }
 
 
