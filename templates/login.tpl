@@ -17,8 +17,8 @@
         <button action="ingresar" type="submit" class="btn btn-primary">Login</button>
     </form>
     <div class="alert alert-danger" role="alert">
-  {$message}
-</div>
+        {$message}
+    </div>
 </div>
 
 
