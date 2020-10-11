@@ -2,43 +2,45 @@
 
 require_once "./libs/Smarty/Smarty.class.php";
 
-class TablaView{
+class TablaAdminView{
 
     private $title;
 
     function __construct(){
-        $this->title = "Tandil Automotores";
+        $this->title = "Tandil Automotores admin";
     }
 
-    function ShowHome($inv,$vend){
+    function ShowAdminHome($inv, $vend){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('vendedores_s', $vend);
         $smarty->assign('inventario_s', $inv);
-        $smarty->display('templates/inventario.tpl');
+        $smarty->display('templates/inventarioAdmin.tpl');
     }
 
-    function ShowVendedores($vend){
+    function ShowAdminVendedores($vend,$inv){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('vendedores_s', $vend);
-        $smarty->display('templates/vendedores.tpl');
+        $smarty->assign('inventario_s', $inv);
+        $smarty->display('templates/vendedoresAdmin.tpl');
     }
 
-    function ShowAutosVendedor($autosvend){
+    function ShowAdminAutosVendedor($autosvend){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('autosvendedor_s', $autosvend);
-        $smarty->display('templates/autosvendedor.tpl');
+        $smarty->display('templates/autosvendedorAdmin.tpl');
     }
     function ShowHomeLoc(){
         header("Location: " . BASE_URL . "home");
     }
 
-    function ShowDetalles($det){
-        $smarty = new Smarty();
-        $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('detalle_s', $det);
-        $smarty->display('templates/detalle.tpl');
+    function ShowAdminHomeLoc(){
+        header("Location: " . BASE_URL . "adminhome");
+    }
+
+    function ShowAdminVendLoc(){
+        header("Location: " . BASE_URL . "adminvendedores");
     }
 }

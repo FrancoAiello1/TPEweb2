@@ -8,27 +8,27 @@ class TablaModel{
     }
 
     function GetInventario(){
-        $sentencia = $this->db->prepare("SELECT * FROM automotor");
+        $sentencia = $this->db->prepare("SELECT * FROM automotor a, vendedor v WHERE a.id_vendedor=v.id_vendedor");
         $sentencia->execute();
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function InsertAutomovil($modelo,$anio,$kilometraje,$potencia,$peso, $consumo){
-        $sentencia = $this->db->prepare("INSERT INTO automotor(modelo, anio, kilometraje, potencia, peso, consumo) VALUES(?,?,?,?,?,?)");
-        $sentencia->execute(array($modelo,$anio,$kilometraje,$potencia,$peso, $consumo));
+    function GetVendedores(){
+        $sentencia = $this->db->prepare("SELECT * FROM vendedor");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function DeleteAutoDelModelo($id_auto){
-        $sentencia = $this->db->prepare("DELETE FROM automotor WHERE id=?");
-        $sentencia->execute(array($id_auto));
+    function GetAutosVendedor($id_vendedor){
+        $sentencia = $this->db->prepare("SELECT * FROM automotor WHERE id_vendedor=$id_vendedor");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function MarcarAutoComoVendido(id_auto){
-        $sentencia = $this->db->prepare("UPDATE automotor SET vendido=1 WHERE id=?");
-        $sentencia->execute(array($id_auto));
+    function GetAuto($id_auto){
+        $sentencia = $this->db->prepare("SELECT * FROM automotor WHERE id_auto=$id_auto");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
-
-
-
-
+}
 ?>

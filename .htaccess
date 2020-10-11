@@ -5,6 +5,7 @@
 
 
     RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
-    RewriteRule ^(.*)$ RouteAvanzado.php?action=$1 [QSA,L]
+    RewriteRule ^(.*)$ Route.php?action=$1 [QSA,L]
+    
 
 </IfModule>
