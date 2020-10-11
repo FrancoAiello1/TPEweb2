@@ -72,7 +72,7 @@ class TablaAdminController
         $peso = $_POST['input_peso'];
         $consumo = $_POST['input_consumo'];
         $id_vendedor = $_POST['input_vendedor'];
-        $detalle = $_POST['input_detalles'];
+        $detalle = $_POST['input_detalle'];
 
         $this->model->InsertAuto($modelo,$año,$kms,$potencia,$peso,$consumo,$detalle,$id_vendedor);
         $this->view->ShowAdminHomeLoc();
