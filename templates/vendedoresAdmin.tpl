@@ -28,7 +28,7 @@
         </form>
     </div>
     <div>
-        <table align="center" border=1px, solid, black>
+        <table class="table" align="center" border=1px, solid, black>
             <thead>
                 <tr>
                     <th>Nombre</th>

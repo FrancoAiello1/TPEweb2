@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-07 23:35:43
+/* Smarty version 3.1.34-dev-7, created on 2020-10-15 00:57:29
   from 'C:\xampp\htdocs\web2\TPE\templates\inventarioAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f7e34afce4bc6_71982094',
+  'unifunc' => 'content_5f8782591cbf05_84694452',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd9081b8b8c7f1ec902ec5860a704edb2e8aa679e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\inventarioAdmin.tpl',
-      1 => 1602106502,
+      1 => 1602716240,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f7e34afce4bc6_71982094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f8782591cbf05_84694452 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -81,7 +81,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </form>
     </div>
     <div>
-        <table align="center" border=1px, solid, black>
+        <table class="table" align="center" border=1px, solid, black>
             <thead>
                 <tr>
                     <th>Modelo</th>
