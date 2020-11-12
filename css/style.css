@@ -1,0 +1,19 @@
+
+    .hidden {
+        display: none;
+    }
+    .test{
+        color: blue;
+    }
+    .flex-container {
+        display: flex;
+
+    }
+
+    .flex-container>div {
+        
+        margin: 10px;
+        padding: 20px;
+    }
+
+

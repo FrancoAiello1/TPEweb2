@@ -34,9 +34,10 @@ $r->addRoute("autosvendedoradmin/:ID", "GET", "TablaAdminController", "AdminAuto
 $r->addRoute("insert", "POST", "TablaAdminController", "InsertarAuto");
 $r->addRoute("delete/:ID", "GET", "TablaAdminController", "DeleteAuto");
 $r->addRoute("deletev/:ID", "GET", "TablaAdminController", "DeleteVendedor");
-$r->addRoute("modify", "POST", "TablaAdminController", "ModificaAuto");
+$r->addRoute("edit/modify", "POST", "TablaAdminController", "ModificaAuto");
 $r->addRoute("insertVendedor", "POST", "TablaAdminController", "InsertarVendedor");
 $r->addRoute("modifyVendedor", "POST", "TablaAdminController", "ModificaVendedor");
+$r->addRoute("edit/:ID", "GET", "TablaAdminController", "EditarAuto");
 
 //Ruta default
 $r->setDefaultRoute("TablaController", "Home");

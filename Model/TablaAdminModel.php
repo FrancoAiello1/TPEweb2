@@ -35,6 +35,12 @@ class TablaAdminModel{
         $sentencia->execute(array($id_auto));
     }
 
+    function GetToModify($id_auto){
+        $sentencia = $this->db->prepare("SELECT * FROM automotor WHERE id_auto=$id_auto");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
     function ModificarAuto($modelo,$anio,$kilometraje,$potencia,$peso, $consumo,$detalle, $id_vendedor, $id_auto){
         $sentencia = $this->db->prepare("UPDATE automotor SET modelo=?, anio=?, kilometraje=?, potencia=?, peso=?, consumo=?,detalles=?, id_vendedor=?  WHERE id_auto=?");
         $sentencia->execute(array($modelo,$anio,$kilometraje,$potencia,$peso, $consumo,$detalle,$id_vendedor, $id_auto));

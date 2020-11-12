@@ -101,6 +101,15 @@ class TablaAdminController
         $this->view->ShowAdminHomeLoc();
     }
 
+    function EditarAuto($params = null){
+        $this->CheckLoggedIn();
+        $id_auto = $params[':ID'];
+        $vend = $this->model->GetVendedores();
+        $auto = $this->model->GetToModify($id_auto);
+        $this->view->ShowEditAuto($vend,$auto);
+
+    }
+
     function InsertarVendedor(){
         $this->CheckLoggedIn();
 

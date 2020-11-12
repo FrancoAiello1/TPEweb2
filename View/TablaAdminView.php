@@ -32,6 +32,15 @@ class TablaAdminView{
         $smarty->assign('autosvendedor_s', $autosvend);
         $smarty->display('templates/autosvendedorAdmin.tpl');
     }
+
+    function ShowEditAuto($vend,$auto){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('vendedores_s', $vend);
+        $smarty->assign('autos_s', $auto);
+        $smarty->display('templates/editar.tpl');
+    }
+
     function ShowHomeLoc(){
         header("Location: " . BASE_URL . "home");
     }
