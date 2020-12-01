@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$titulo_s}</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="adminhome">Tandil Automotores</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,12 +18,12 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="adminhome">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="volveradmin">Volver <span class="sr-only">(current)</span></a>
-            </li>
+                <div class="nav-boton">
+                    <a class="btn btn-light" href="adminhome">Inicio</a>
+                </div>
+                <div class="nav-boton">
+                    <a class="btn btn-light" href="volveradmin">Volver</a>
+                </div>
             </ul>
         </div>
     </nav>

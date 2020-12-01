@@ -1,6 +1,7 @@
-{include file="header.tpl"}
-<ul class="flex-container">
-    <form action="modify" method="post">
+{include file="headerAdmin.tpl"}
+<h2 class="text-center bg-danger text-white">MODIFICAR AUTOMOTOR</h2>
+<div align="center" class="flex-container">
+    <form class="formulario" action="modify" method="post">
         {foreach from= $autos_s item=auto}
             <label for="modelo">Modelo </label>
             <div>
@@ -38,12 +39,14 @@
                     {/foreach}
                 </select>
             </div>
-            <input class="test" id="id" name="input_idauto" value="{$auto->id_auto}" />
+            <div class="oculto">
+                <input id="id" name="input_idauto" value="{$auto->id_auto}" />
+            </div>
         {/foreach}
         <div>
             <button type="submit" class="btn btn-primary">Modificar automotor</button>
         </div>
     </form>
-</ul>
+</div>
 
 {include file="footer.tpl"}

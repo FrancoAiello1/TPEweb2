@@ -24,6 +24,9 @@ $r->addRoute("detalle/:ID", "GET", "TablaController", "DetalleAuto");
 $r->addRoute("login", "GET", "UserController", "Login");
 $r->addRoute("logout", "GET", "TablaAdminController", "Logout");
 $r->addRoute("verifyUser", "POST", "UserController", "VerifyUser");
+$r->addRoute("signup", "GET", "UserController", "Signup");
+$r->addRoute("register", "POST", "UserController", "CreateUser");
+
 
 // Rutas Admin
 $r->addRoute("adminhome", "GET", "TablaAdminController", "AdminHome");
@@ -36,8 +39,13 @@ $r->addRoute("delete/:ID", "GET", "TablaAdminController", "DeleteAuto");
 $r->addRoute("deletev/:ID", "GET", "TablaAdminController", "DeleteVendedor");
 $r->addRoute("edit/modify", "POST", "TablaAdminController", "ModificaAuto");
 $r->addRoute("insertVendedor", "POST", "TablaAdminController", "InsertarVendedor");
-$r->addRoute("modifyVendedor", "POST", "TablaAdminController", "ModificaVendedor");
 $r->addRoute("edit/:ID", "GET", "TablaAdminController", "EditarAuto");
+$r->addRoute("editVend/:ID", "GET", "TablaAdminController", "EditarVend");
+$r->addRoute("editVend/modify", "POST", "TablaAdminController", "ModificaVendedor");
+$r->addRoute("abmadmin", "GET", "TablaAdminController", "AbmAdmin");
+$r->addRoute("deleteuser/:ID", "GET", "TablaAdminController", "deleteuser");
+$r->addRoute("removeadmin/:ID", "GET", "TablaAdminController", "removeadmin");
+$r->addRoute("addadmin/:ID", "GET", "TablaAdminController", "addadmin");
 
 //Ruta default
 $r->setDefaultRoute("TablaController", "Home");

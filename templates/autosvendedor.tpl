@@ -1,8 +1,8 @@
 {include file="headervendedor.tpl"}
 
-<h2 align="center">AUTOS DEL VENDEDOR</h2>
+<h2 class="text-center bg-danger text-white">AUTOS DEL VENDEDOR</h2>
 
-<table align="center" border=1px, solid, black>
+<table class="table" align="center" border=1px, solid, black>
     <thead>
         <tr>
             <th>Modelo</th>

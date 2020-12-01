@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-15 00:59:14
+/* Smarty version 3.1.34-dev-7, created on 2020-11-25 18:49:23
   from 'C:\xampp\htdocs\web2\TPE\templates\inventario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f8782c27b8163_09775855',
+  'unifunc' => 'content_5fbe9923830966_78319013',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd52325450c4a35f2009549964477ef8d2f95190c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\inventario.tpl',
-      1 => 1602716351,
+      1 => 1606326417,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f8782c27b8163_09775855 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbe9923830966_78319013 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<h2 align="center">NUESTROS AUTOMOTORES</h2>
+<h2 class="text-center bg-danger text-white">NUESTROS AUTOMOTORES</h2>
 
-<table align="center" border=1px, solid, black>
+<table class="table" align="center" border=1px, solid, black>
     <thead>
         <tr>
             <th>Modelo</th>

@@ -17,4 +17,11 @@ class UserView{
         $smarty->display('templates/login.tpl');
     }
 
+    function ShowSignup($message = ""){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('message', $message);
+        $smarty->display('templates/signup.tpl');
+    }
+
 }

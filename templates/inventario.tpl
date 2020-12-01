@@ -1,8 +1,8 @@
 {include file="header.tpl"}
 
-<h2 align="center">NUESTROS AUTOMOTORES</h2>
+<h2 class="text-center bg-danger text-white">NUESTROS AUTOMOTORES</h2>
 
-<table align="center" border=1px, solid, black>
+<table class="table" align="center" border=1px, solid, black>
     <thead>
         <tr>
             <th>Modelo</th>

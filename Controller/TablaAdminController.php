@@ -9,26 +9,37 @@ class TablaAdminController
     private $view;
     private $model;
 
-    function __construct(){
+    function __construct()
+    {
         $this->view = new TablaAdminView();
         $this->model = new TablaAdminModel();
     }
 
-    function Logout(){
+    function Logout()
+    {
         session_start();
         session_destroy();
-        header("Location: ".LOGIN);
+        header("Location: " . LOGIN);
     }
 
-    function VendedoresAdminVolver(){
+    function VendedoresAdminVolver()
+    {
         header("Location: " . BASE_URL . "adminvendedores");
     }
 
-    function VendedoresAdminVolverHome(){
+    function VendedoresAdminVolverHome()
+    {
         header("Location: " . BASE_URL . "adminhome");
     }
-    
-    function CheckLoggedIn(){
+
+    function getUserName()
+    {
+        if (isset($_SESSION['USER']))
+            return $_SESSION['USER'];
+    }
+
+    function CheckLoggedIn()
+    {
         session_start();
         if (!isset($_SESSION['USER'])) {
             header("Location: " . LOGIN);
@@ -40,29 +51,43 @@ class TablaAdminController
         }
     }
 
-    function AdminHome(){
+    function AdminHome()
+    {
         $this->CheckLoggedIn();
+        $username = $this->getUserName();
+        $admin=$this->model->getIfAdmin($username);
         $inv = $this->model->GetInventario();
         $vend = $this->model->GetVendedores();
-        $this->view->ShowAdminHome($inv, $vend);
+        $this->view->ShowAdminHome($inv, $vend, $admin);
     }
 
-    function AdminVendedores(){
+    function AdminVendedores()
+    {
         $this->CheckLoggedIn();
+        $username = $this->getUserName();
+        $admin=$this->model->getIfAdmin($username);
         $vend = $this->model->GetVendedores();
         $inv = $this->model->GetInventario();
-        $this->view->ShowAdminVendedores($vend,$inv);
-
+        $this->view->ShowAdminVendedores($vend, $inv, $admin);
     }
 
-    function AdminAutosVendedor($params = null){
+    function AdminAutosVendedor($params = null)
+    {
         $this->CheckLoggedIn();
         $id_vendedor = $params[':ID'];
         $autosvend = $this->model->GetAutosVendedor($id_vendedor);
         $this->view->ShowAdminAutosVendedor($autosvend);
     }
 
-    function InsertarAuto(){
+    function AbmAdmin()
+    {
+        $this->CheckLoggedIn();
+        $users = $this->model->GetUsuarios();
+        $this->view->ShowAdminAbm($users);
+    }
+
+    function InsertarAuto()
+    {
         $this->CheckLoggedIn();
 
         $modelo = $_POST['input_modelo'];
@@ -74,18 +99,20 @@ class TablaAdminController
         $id_vendedor = $_POST['input_vendedor'];
         $detalle = $_POST['input_detalle'];
 
-        $this->model->InsertAuto($modelo,$año,$kms,$potencia,$peso,$consumo,$detalle,$id_vendedor);
+        $this->model->InsertAuto($modelo, $año, $kms, $potencia, $peso, $consumo, $detalle, $id_vendedor);
         $this->view->ShowAdminHomeLoc();
     }
 
-    function DeleteAuto($params = null){
+    function DeleteAuto($params = null)
+    {
         $this->CheckLoggedIn();
         $id_auto = $params[':ID'];
         $this->model->DeleteAuto($id_auto);
         $this->view->ShowAdminHomeLoc();
     }
 
-    function ModificaAuto(){
+    function ModificaAuto()
+    {
         $this->CheckLoggedIn();
 
         $modelo = $_POST['input_modelo'];
@@ -97,48 +124,81 @@ class TablaAdminController
         $detalle = $_POST['input_detalle'];
         $id_vendedor = $_POST['input_vendedor'];
         $id_auto = $_POST['input_idauto'];
-        $this->model->ModificarAuto($modelo,$año,$kms,$potencia,$peso, $consumo,$detalle, $id_vendedor, $id_auto);
+        $this->model->ModificarAuto($modelo, $año, $kms, $potencia, $peso, $consumo, $detalle, $id_vendedor, $id_auto);
         $this->view->ShowAdminHomeLoc();
     }
 
-    function EditarAuto($params = null){
+    function EditarAuto($params = null)
+    {
         $this->CheckLoggedIn();
         $id_auto = $params[':ID'];
         $vend = $this->model->GetVendedores();
         $auto = $this->model->GetToModify($id_auto);
-        $this->view->ShowEditAuto($vend,$auto);
-
+        $this->view->ShowEditAuto($vend, $auto);
     }
 
-    function InsertarVendedor(){
+    function EditarVend($params = null)
+    {
+        $this->CheckLoggedIn();
+        $id_vend = $params[':ID'];
+        $vend = $this->model->GetToModifyV($id_vend);
+        $this->view->ShowEditVend($vend);
+    }
+
+    function InsertarVendedor()
+    {
+        $this->CheckLoggedIn();
+        $nombre = $_POST['input_nombre'];
+        $edad = $_POST['input_edad'];
+        $ciudad = $_POST['input_ciudad'];
+        $email = $_POST['input_email'];
+
+        $this->model->InsertVendedor($nombre, $edad, $ciudad, $email);
+        $this->view->ShowAdminVendLoc();
+    }
+
+    function ModificaVendedor()
+    {
         $this->CheckLoggedIn();
 
         $nombre = $_POST['input_nombre'];
         $edad = $_POST['input_edad'];
         $ciudad = $_POST['input_ciudad'];
         $email = $_POST['input_email'];
+        $id_vendedor = $_POST['input_idvendedor'];
 
-        $this->model->InsertVendedor($nombre,$edad,$ciudad,$email);
+        $this->model->ModificarVendedor($nombre, $edad, $ciudad, $email, $id_vendedor);
         $this->view->ShowAdminVendLoc();
     }
 
-    function ModificaVendedor(){
-        $this->CheckLoggedIn();
-
-        $nombre = $_POST['input_nombre'];
-        $edad = $_POST['input_edad'];
-        $ciudad = $_POST['input_ciudad'];
-        $email = $_POST['input_email'];
-        $id_vendedor = $_POST['input_vendedor'];
-
-        $this->model->ModificarVendedor($nombre,$edad,$ciudad,$email,$id_vendedor);
-        $this->view->ShowAdminVendLoc();
-    }
-
-    function DeleteVendedor($params = null){
+    function DeleteVendedor($params = null)
+    {
         $this->CheckLoggedIn();
         $id_vendedor = $params[':ID'];
         $this->model->DeleteVendedor($id_vendedor);
         $this->view->ShowAdminVendLoc();
+    }
+
+    function DeleteUser($params = null)
+    {
+        $this->CheckLoggedIn();
+        $id = $params[':ID'];
+        $this->model->DeleteUser($id);
+        $this->view->ShowAdminAbmLoc();
+    }
+
+    function RemoveAdmin($params = null)
+    {
+        $this->CheckLoggedIn();
+        $id = $params[':ID'];
+        $this->model->RemoveAdmin($id);
+        $this->view->ShowAdminAbmLoc();
+    }
+    function AddAdmin($params = null)
+    {
+        $this->CheckLoggedIn();
+        $id = $params[':ID'];
+        $this->model->AddAdmin($id);
+        $this->view->ShowAdminAbmLoc();
     }
 }

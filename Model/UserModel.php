@@ -13,5 +13,15 @@ class UserModel{
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    function NewUser($user,$pw){
+        $sentencia = $this->db->prepare("INSERT INTO usuario(username, password, admin) VALUES (?, ?, 0)");
+        $sentencia->execute(array($user,$pw));
+    }
+
+    function UserTaken($user){
+        $sentencia = $this->db->prepare("SELECT * FROM usuario WHERE username=$user");
+        $sentencia->execute(array($user));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
 }
 ?>

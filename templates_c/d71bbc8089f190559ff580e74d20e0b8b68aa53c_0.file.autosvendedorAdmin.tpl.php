@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-08 21:03:10
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 21:44:02
   from 'C:\xampp\htdocs\web2\TPE\templates\autosvendedorAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f7f626ee48a42_90357292',
+  'unifunc' => 'content_5fc55992e71c50_72309485',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd71bbc8089f190559ff580e74d20e0b8b68aa53c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\autosvendedorAdmin.tpl',
-      1 => 1602183789,
+      1 => 1606326406,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f7f626ee48a42_90357292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc55992e71c50_72309485 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headerVendedoresAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<h2 align="center">AUTOS DEL VENDEDOR</h2>
+<h2 class="text-center bg-danger text-white">AUTOS DEL VENDEDOR</h2>
 
-<table align="center" border=1px, solid, black>
+<table class="table" align="center" border=1px, solid, black>
     <thead>
         <tr>
             <th>Modelo</th>

@@ -1,32 +1,33 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-12 22:51:36
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 21:44:32
   from 'C:\xampp\htdocs\web2\TPE\templates\editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fadae680f3915_91044465',
+  'unifunc' => 'content_5fc559b098fb55_52520949',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16ced14ac19fa93c12d32e7fcf5c4eb007ea7e73' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\editar.tpl',
-      1 => 1605217883,
+      1 => 1606326479,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
+    'file:headerAdmin.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fadae680f3915_91044465 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5fc559b098fb55_52520949 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<ul class="flex-container">
-    <form action="modify" method="post">
+<h2 class="text-center bg-danger text-white">MODIFICAR AUTOMOTOR</h2>
+<div align="center" class="flex-container">
+    <form class="formulario" action="modify" method="post">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['autos_s']->value, 'auto');
 $_smarty_tpl->tpl_vars['auto']->do_else = true;
@@ -85,8 +86,10 @@ $_smarty_tpl->tpl_vars['vendedor']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
             </div>
-            <input class="test" id="id" name="input_idauto" value="<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
+            <div class="oculto">
+                <input id="id" name="input_idauto" value="<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
 " />
+            </div>
         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -94,7 +97,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <button type="submit" class="btn btn-primary">Modificar automotor</button>
         </div>
     </form>
-</ul>
+</div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

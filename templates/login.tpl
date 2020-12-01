@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-
+<h2 class="text-center bg-danger text-white">ACCEDÉ A TU CUENTA</h2>
 <div class="col-md-3 offset-md-4">
     <form action="verifyUser" method="post">
         <label for="user">Usuario</label>

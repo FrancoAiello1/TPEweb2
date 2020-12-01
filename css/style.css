@@ -1,19 +1,14 @@
+.flex-container {
+    display: flex;
+}
 
-    .hidden {
-        display: none;
-    }
-    .test{
-        color: blue;
-    }
-    .flex-container {
-        display: flex;
-
-    }
-
-    .flex-container>div {
-        
-        margin: 10px;
-        padding: 20px;
-    }
-
-
+.flex-container>div {
+    margin: 10px;
+    padding: 20px;
+}
+.oculto{
+    display: none;
+}
+.nav-boton{
+    margin: 10px;
+}
