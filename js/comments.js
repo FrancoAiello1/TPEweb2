@@ -56,15 +56,20 @@ function deleteComment(id) {
         })
         .catch(error => console.log(error));
 }
+
 document.querySelector("#form-comentario").addEventListener('submit', addComment);
 
 function addComment() {
     event.preventDefault();
 
-    let auto = document.querySelector("#id_auto").value;
+    let auto = document.getElementById("id_auto").value;
     let comment = document.getElementById("comentario").value;
     let puntaje = document.getElementById("puntuacion").value;
-    let usuario = document.getElementById("id_user").value;
+    let usuario = document.getElementById("usuario").value;
+    console.log(auto);
+    console.log(comment);
+    console.log(puntaje);
+    console.log(usuario);
 
     let comentarioCompleto = {
         "comentario": comment,

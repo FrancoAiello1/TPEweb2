@@ -15,12 +15,15 @@ $r = new Router();
 // Rutas Usuario
 $r->addRoute("home", "GET", "TablaController", "Home");
 $r->addRoute("autosvendedor/volver", "GET", "TablaController", "VendedoresVolver");
+$r->addRoute("detalles/volver", "GET", "TablaController", "GoHome");
+$r->addRoute("detalles/home", "GET", "TablaController", "GoHome");
 $r->addRoute("detalle/volver", "GET", "TablaController", "GoHome");
 $r->addRoute("detalle/home", "GET", "TablaController", "GoHome");
 $r->addRoute("autosvendedor/home", "GET", "TablaController", "GoHome");
 $r->addRoute("vendedores", "GET", "TablaController", "Vendedores");
 $r->addRoute("autosvendedor/:ID", "GET", "TablaController", "AutosVendedor");
-$r->addRoute("detalle/:ID", "GET", "TablaAdminController", "DetalleAuto");
+$r->addRoute("detalles/:ID", "GET", "TablaAdminController", "DetalleAuto");
+$r->addRoute("detalle/:ID", "GET", "TablaAdminController", "DetalleAutoLogged");
 $r->addRoute("login", "GET", "UserController", "Login");
 $r->addRoute("logout", "GET", "TablaAdminController", "Logout");
 $r->addRoute("verifyUser", "POST", "UserController", "VerifyUser");

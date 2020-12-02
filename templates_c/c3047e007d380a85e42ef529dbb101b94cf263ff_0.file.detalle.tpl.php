@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 04:23:23
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 16:15:27
   from 'C:\xampp\htdocs\web2\TPE\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc708ab32f1d7_50600708',
+  'unifunc' => 'content_5fc7af8f83dab0_47906059',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3047e007d380a85e42ef529dbb101b94cf263ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\detalle.tpl',
-      1 => 1606879401,
+      1 => 1606922116,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc708ab32f1d7_50600708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc7af8f83dab0_47906059 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headervendedor.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -80,10 +80,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <form method="POST" id="form-comentario">
     <input id="id_auto" type="hidden" value=<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
 >
-    <input id="usuario" type="hidden" value="1">
-    <input id="admin" type="hidden" value="1">   
+    <input id="usuario" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['id_usuario']->value[0]->id;?>
+">
+    <input id="admin" type="hidden" value=<?php echo $_smarty_tpl->tpl_vars['admin']->value[0]->admin;?>
+>   
 
-    
+    <?php if (($_smarty_tpl->tpl_vars['logged']->value == 1)) {?>
         <span class="badge badge-dark"></span> <input id="comentario" type="text" size="30" maxlength="30" placeholder="Deje su comentario">
         <label>Puntaje</label>
         <select id="puntuacion">
@@ -93,9 +95,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
+
     
         <input class="btn btn-link" type="submit" value="Comentar">
-    
+     <?php } else { ?>
+        <p>¡Para comentar, debe resgistrarse!
+    <?php }?>
 </form>
 
 

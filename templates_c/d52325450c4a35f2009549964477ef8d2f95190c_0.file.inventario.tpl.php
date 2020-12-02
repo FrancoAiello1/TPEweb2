@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-25 18:49:23
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 14:52:03
   from 'C:\xampp\htdocs\web2\TPE\templates\inventario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbe9923830966_78319013',
+  'unifunc' => 'content_5fc79c03d41a15_56495153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd52325450c4a35f2009549964477ef8d2f95190c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\inventario.tpl',
-      1 => 1606326417,
+      1 => 1606917120,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fbe9923830966_78319013 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc79c03d41a15_56495153 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -62,7 +62,7 @@ $_smarty_tpl->tpl_vars['auto']->do_else = false;
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['auto']->value->consumo;?>
 </td>
-                <td><button type="button" class="btn btn-link"><a href="detalle/<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
+                <td><button type="button" class="btn btn-link"><a href="detalles/<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
 ">Detalle</a></button></td>
                 <td><?php echo $_smarty_tpl->tpl_vars['auto']->value->nombre;?>
 </td>

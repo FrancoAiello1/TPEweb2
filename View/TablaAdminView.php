@@ -57,6 +57,16 @@ class TablaAdminView{
         $smarty->display('templates/adminUsuarios.tpl');
     }
 
+    function ShowDetalles($det,$admin,$id_user,$logged){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('detalle_s', $det);
+        $smarty->assign('admin', $admin);
+        $smarty->assign('logged', $logged);
+        $smarty->assign('id_usuario', $id_user);
+        $smarty->display('templates/detalle.tpl');
+    }
+
     function ShowHomeLoc(){
         header("Location: " . BASE_URL . "home");
     }

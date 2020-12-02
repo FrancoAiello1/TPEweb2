@@ -21,6 +21,13 @@ class TablaController{
             die();
         }
     }
+
+    function getUserName()
+    {
+        if (isset($_SESSION['USER']))
+            return $_SESSION['USER'];
+    }
+
     function Home(){
         $this->CheckLoggedIn();
         $inv = $this->model->GetInventario();
@@ -48,4 +55,5 @@ class TablaController{
         $autosvend =$this->model->GetAutosVendedor($id_vendedor);
         $this->view->ShowAutosVendedor($autosvend);
     }
+
 }

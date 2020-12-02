@@ -25,7 +25,7 @@
                 <td>{$auto->potencia}</td>
                 <td>{$auto->peso}</td>
                 <td>{$auto->consumo}</td>
-                <td><button type="button" class="btn btn-link"><a href="detalle/{$auto->id_auto}">Detalle</a></button></td>
+                <td><button type="button" class="btn btn-link"><a href="detalles/{$auto->id_auto}">Detalle</a></button></td>
                 <td>{$auto->nombre}</td>
             </tr>
         {/foreach}

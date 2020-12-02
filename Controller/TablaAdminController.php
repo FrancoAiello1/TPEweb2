@@ -42,6 +42,7 @@ class TablaAdminController
             return $_SESSION['USER'];
     }
 
+
     function CheckLoggedIn()
     {
         session_start();
@@ -90,10 +91,18 @@ class TablaAdminController
         $this->view->ShowAdminAbm($users);
     }
 
+    function DetalleAuto($params = NULL){
+        $id_auto = $params[':ID'];
+        $detalleauto = $this->model2->GetAuto($id_auto);
+        $admin = array(new \stdClass);
+        $admin[0]->admin=0;
+        $logged = 0;
+        $this->view2->ShowDetalle($detalleauto,$admin,$logged);
+    }
+
     function InsertarAuto()
     {
         $this->CheckLoggedIn();
-
         $modelo = $_POST['input_modelo'];
         $año = $_POST['input_año'];
         $kms = $_POST['input_kms'];
@@ -115,13 +124,15 @@ class TablaAdminController
         $this->view->ShowAdminHomeLoc();
     }
 
-    function DetalleAuto($params = NULL){
+    function DetalleAutoLogged($params = NULL){
+        $this->CheckLoggedIn();
         $id_auto = $params[':ID'];
         $detalleauto = $this->model2->GetAuto($id_auto);
         $username = $this->getUserName();
         $admin=$this->model->getIfAdmin($username);
         $id_user=$this->model->getIdByName($username);
-        $this->view2->ShowDetalles($detalleauto,$admin,$id_user);
+        $logged = 1;
+        $this->view->ShowDetalles($detalleauto,$admin,$id_user,$logged);
         
     }
 
