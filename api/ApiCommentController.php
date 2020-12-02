@@ -1,24 +1,28 @@
-<?php 
+<?php
 require_once './Model/CommentModel.php';
 require_once './api/APIView.php';
 
-abstract class ApiController {
-    protected $model; // lo instancia el hijo
-    protected $view;
+class ApiCommentController
+{
+    private $model;
+    private $view;
+    private $data;
 
-    private $data; 
-
-    public function __construct() {
+    public function __construct()
+    {
+        $this->model = new CommentModel();
         $this->view = new APIView();
-        $this->data = file_get_contents("php://input"); 
+        $this->data = file_get_contents("php://input");
     }
 
-    function getData(){ 
-        return json_decode($this->data); 
-    }  
+    function getData()
+    {
+        return json_decode($this->data);
+    }
+    
     public function getComments()
     {
-        $a = $this->model->getComments();
+        $a = $this->model->getAllComments();
         $this->view->response($a, 200);
     }
 
@@ -36,7 +40,7 @@ abstract class ApiController {
     public function comment($params = [])
     {
         $id = $params[':ID'];
-        $a = $this->model->a_comentary($id);
+        $a = $this->model->selectComment($id);
         if ($a)
             $this->view->response($a, 200);
         else
@@ -63,14 +67,12 @@ abstract class ApiController {
         $puntaje = $body->puntaje;
         $usuario = $body->id_usuario;
         $auto = $body->id_auto;
-        $completo = $this->model->insertComment($comentario, $puntaje, $usuario, $auto); 
-      
-       if ($completo){
-        $this->view->response("Se agrego el comentario", 200);
-        } else{
-        $this->view->response("No se puedo agregar el comentario", 500);
+        $completo = $this->model->insertComment($comentario, $puntaje, $usuario, $auto);
+
+        if ($completo) {
+            $this->view->response("Se agrego el comentario", 200);
+        } else {
+            $this->view->response("No se puedo agregar el comentario", 500);
         }
-      
     }
 }
-

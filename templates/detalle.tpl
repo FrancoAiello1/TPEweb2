@@ -37,11 +37,11 @@
 
 <form method="POST" id="form-comentario">
     <input id="id_auto" type="hidden" value={$auto->id_auto}>
-    <input id="usuario"  value={$id_usuario}>
-    <input id="admin"  value={$admin}> 
+    <input id="usuario" type="hidden" value="1">
+    <input id="admin" type="hidden" value="1">   
 
-    {if $admin}
-        <span class="badge badge-dark">{$admin}</span> <input id="comentario" type="text" size="30" maxlength="30" placeholder="Deje su comentario">
+    
+        <span class="badge badge-dark"></span> <input id="comentario" type="text" size="30" maxlength="30" placeholder="Deje su comentario">
         <label>Puntaje</label>
         <select id="puntuacion">
             <option value="1">1</option>
@@ -53,10 +53,10 @@
     
         <input class="btn btn-link" type="submit" value="Comentar">
     
-    {else}
+{*     {else}
         <p>Para comentar, debe resgistrarse aqui -
             <a name="registro" href="registro">Registrarme</a></p>
-    {/if}
+    {/if} *}
 </form>
 
 

@@ -57,6 +57,13 @@ class TablaAdminModel{
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
+    function getIdByName($username){
+        $sentencia = $this->db->prepare("SELECT id FROM usuario WHERE username='".$username."'");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
     function AddAdmin($id){
         $sentencia = $this->db->prepare("UPDATE usuario SET admin=1 WHERE id=?");
         $sentencia->execute(array($id));

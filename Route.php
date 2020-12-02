@@ -20,7 +20,7 @@ $r->addRoute("detalle/home", "GET", "TablaController", "GoHome");
 $r->addRoute("autosvendedor/home", "GET", "TablaController", "GoHome");
 $r->addRoute("vendedores", "GET", "TablaController", "Vendedores");
 $r->addRoute("autosvendedor/:ID", "GET", "TablaController", "AutosVendedor");
-$r->addRoute("detalle/:ID", "GET", "TablaController", "DetalleAuto");
+$r->addRoute("detalle/:ID", "GET", "TablaAdminController", "DetalleAuto");
 $r->addRoute("login", "GET", "UserController", "Login");
 $r->addRoute("logout", "GET", "TablaAdminController", "Logout");
 $r->addRoute("verifyUser", "POST", "UserController", "VerifyUser");

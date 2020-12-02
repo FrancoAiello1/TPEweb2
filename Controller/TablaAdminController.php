@@ -2,7 +2,8 @@
 
 require_once "./View/TablaAdminView.php";
 require_once "./Model/TablaAdminModel.php";
-
+require_once "./View/TablaView.php";
+require_once "./Model/TablaModel.php";
 class TablaAdminController
 {
 
@@ -13,6 +14,9 @@ class TablaAdminController
     {
         $this->view = new TablaAdminView();
         $this->model = new TablaAdminModel();
+
+        $this->view2 = new TablaView();
+        $this->model2 = new TablaModel();
     }
 
     function Logout()
@@ -109,6 +113,16 @@ class TablaAdminController
         $id_auto = $params[':ID'];
         $this->model->DeleteAuto($id_auto);
         $this->view->ShowAdminHomeLoc();
+    }
+
+    function DetalleAuto($params = NULL){
+        $id_auto = $params[':ID'];
+        $detalleauto = $this->model2->GetAuto($id_auto);
+        $username = $this->getUserName();
+        $admin=$this->model->getIfAdmin($username);
+        $id_user=$this->model->getIdByName($username);
+        $this->view2->ShowDetalles($detalleauto,$admin,$id_user);
+        
     }
 
     function ModificaAuto()

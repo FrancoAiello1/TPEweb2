@@ -48,11 +48,4 @@ class TablaController{
         $autosvend =$this->model->GetAutosVendedor($id_vendedor);
         $this->view->ShowAutosVendedor($autosvend);
     }
-
-    function DetalleAuto($params = NULL){
-        $id_auto = $params[':ID'];
-        $detalleauto = $this->model->GetAuto($id_auto);
-        $this->view->ShowDetalles($detalleauto);
-        
-    }
 }
