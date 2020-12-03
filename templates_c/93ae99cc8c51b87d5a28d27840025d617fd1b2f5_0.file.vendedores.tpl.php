@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-25 18:49:27
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 02:05:37
   from 'C:\xampp\htdocs\web2\TPE\templates\vendedores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbe9927429bc9_68104362',
+  'unifunc' => 'content_5fc839e13b6a14_11366887',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '93ae99cc8c51b87d5a28d27840025d617fd1b2f5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\vendedores.tpl',
-      1 => 1606326414,
+      1 => 1606957530,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fbe9927429bc9_68104362 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc839e13b6a14_11366887 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h2 class="text-center bg-danger text-white">NUESTROS VENDEDORES</h2>
 
-<table class="table" align="center" border=1px, solid, black>
+<table class="table" align="center">
     <thead>
         <tr>
             <th>Nombre</th>

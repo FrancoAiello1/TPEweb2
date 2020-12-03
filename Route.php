@@ -8,7 +8,7 @@ require_once 'RouterClass.php';
 define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/');
 define("LOGIN", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/login');
 define("LOGOUT", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/logout');
-define("ADMIN", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/adminhome');
+define("ADMIN", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/loggedhome');
 
 $r = new Router();
 
@@ -32,11 +32,11 @@ $r->addRoute("register", "POST", "UserController", "CreateUser");
 
 
 // Rutas Admin
-$r->addRoute("adminhome", "GET", "TablaAdminController", "AdminHome");
-$r->addRoute("adminvendedores", "GET", "TablaAdminController", "AdminVendedores");
-$r->addRoute("autosvendedoradmin/volveradmin", "GET", "TablaAdminController", "VendedoresAdminVolver");
-$r->addRoute("autosvendedoradmin/adminhome", "GET", "TablaAdminController", "VendedoresAdminVolverHome");
-$r->addRoute("autosvendedoradmin/:ID", "GET", "TablaAdminController", "AdminAutosVendedor");
+$r->addRoute("loggedhome", "GET", "TablaAdminController", "LoggedHome");
+$r->addRoute("loggedvendedores", "GET", "TablaAdminController", "LoggedVendedores");
+$r->addRoute("autosvendedorlogged/volverlogged", "GET", "TablaAdminController", "VendedoresLoggedVolver");
+$r->addRoute("autosvendedorlogged/loggedhome", "GET", "TablaAdminController", "VendedoresLoggedVolverHome");
+$r->addRoute("autosvendedorlogged/:ID", "GET", "TablaAdminController", "LoggedAutosVendedor");
 $r->addRoute("insert", "POST", "TablaAdminController", "InsertarAuto");
 $r->addRoute("delete/:ID", "GET", "TablaAdminController", "DeleteAuto");
 $r->addRoute("deletev/:ID", "GET", "TablaAdminController", "DeleteVendedor");

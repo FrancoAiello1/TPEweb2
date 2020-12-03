@@ -29,7 +29,7 @@
             </div>
             <label for="detalle">Detalle</label>
             <div>
-                <input id="detalle" name="input_detalle" value="{$auto->detalles}" />
+                <input id="detalle" size="100" name="input_detalle" value="{$auto->detalles}" />
             </div>
             <label for="vendedor">Vendedor</label>
             <div>

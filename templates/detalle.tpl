@@ -31,7 +31,7 @@
 <h4 align="center">{$auto->detalles}</h4>
 <h1 class="text-center bg-success text-white">Comentarios</h1>
 
-<div style="width: 30rem;">
+<div style="width: 50rem;">
     {include 'vue/comments.vue'}
 </div>
 
@@ -41,7 +41,7 @@
     <input id="admin" type="hidden" value={$admin[0]->admin}>   
 
     {if ($logged == 1)}
-        <span class="badge badge-dark"></span> <input id="comentario" type="text" size="30" maxlength="30" placeholder="Deje su comentario">
+        <span class="badge badge-dark"></span> <input id="comentario" type="text" size="100" maxlength="100" placeholder="Deje su comentario">
         <label>Puntaje</label>
         <select id="puntuacion">
             <option value="1">1</option>

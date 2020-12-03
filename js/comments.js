@@ -30,7 +30,7 @@ function loadComments() {
             let i = 0;
 
             for (let comment of a) {
-                suma = suma + parseInt(comment.puntage);
+                suma = suma + parseInt(comment.puntaje);
                 i++;
             }
             let promedio = (suma / i).toFixed(2);

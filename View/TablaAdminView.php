@@ -7,10 +7,10 @@ class TablaAdminView{
     private $title;
 
     function __construct(){
-        $this->title = "Tandil Automotores admin";
+        $this->title = "Tandil Automotores";
     }
 
-    function ShowAdminHome($inv, $vend, $admin){
+    function ShowLoggedHome($inv, $vend, $admin){
         $smarty = new Smarty();
         $smarty->assign('admin', $admin);
         $smarty->assign('titulo_s', $this->title);
@@ -19,7 +19,7 @@ class TablaAdminView{
         $smarty->display('templates/inventarioAdmin.tpl');
     }
 
-    function ShowAdminVendedores($vend,$inv, $admin){
+    function ShowLoggedVendedores($vend,$inv, $admin){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('admin', $admin);
@@ -28,7 +28,7 @@ class TablaAdminView{
         $smarty->display('templates/vendedoresAdmin.tpl');
     }
 
-    function ShowAdminAutosVendedor($autosvend){
+    function ShowLoggedAutosVendedor($autosvend){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('autosvendedor_s', $autosvend);
@@ -71,12 +71,12 @@ class TablaAdminView{
         header("Location: " . BASE_URL . "home");
     }
 
-    function ShowAdminHomeLoc(){
-        header("Location: " . BASE_URL . "adminhome");
+    function ShowLoggedHomeLoc(){
+        header("Location: " . BASE_URL . "loggedhome");
     }
 
-    function ShowAdminVendLoc(){
-        header("Location: " . BASE_URL . "adminvendedores");
+    function ShowLoggedVendLoc(){
+        header("Location: " . BASE_URL . "loggedvendedores");
     }
 
     function ShowAdminAbmLoc(){

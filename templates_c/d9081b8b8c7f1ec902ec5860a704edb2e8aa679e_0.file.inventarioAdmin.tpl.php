@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-01 23:50:47
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 02:03:53
   from 'C:\xampp\htdocs\web2\TPE\templates\inventarioAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc6c8c7e949c9_32692909',
+  'unifunc' => 'content_5fc8397916ca51_41930021',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd9081b8b8c7f1ec902ec5860a704edb2e8aa679e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\inventarioAdmin.tpl',
-      1 => 1606863028,
+      1 => 1606957395,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc6c8c7e949c9_32692909 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc8397916ca51_41930021 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if (($_smarty_tpl->tpl_vars['admin']->value[0]->admin == true)) {?>
     <div class="nav-boton">

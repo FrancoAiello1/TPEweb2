@@ -25,14 +25,14 @@ class TablaAdminController
         header("Location: " . LOGIN);
     }
 
-    function VendedoresAdminVolver()
+    function VendedoresLoggedVolver()
     {
-        header("Location: " . BASE_URL . "adminvendedores");
+        header("Location: " . BASE_URL . "loggedvendedores");
     }
 
-    function VendedoresAdminVolverHome()
+    function VendedoresLoggedVolverHome()
     {
-        header("Location: " . BASE_URL . "adminhome");
+        header("Location: " . BASE_URL . "loggedhome");
     }
 
     function getUserName()
@@ -55,32 +55,32 @@ class TablaAdminController
         }
     }
 
-    function AdminHome()
+    function LoggedHome()
     {
         $this->CheckLoggedIn();
         $username = $this->getUserName();
         $admin=$this->model->getIfAdmin($username);
         $inv = $this->model->GetInventario();
         $vend = $this->model->GetVendedores();
-        $this->view->ShowAdminHome($inv, $vend, $admin);
+        $this->view->ShowLoggedHome($inv, $vend, $admin);
     }
 
-    function AdminVendedores()
+    function LoggedVendedores()
     {
         $this->CheckLoggedIn();
         $username = $this->getUserName();
         $admin=$this->model->getIfAdmin($username);
         $vend = $this->model->GetVendedores();
         $inv = $this->model->GetInventario();
-        $this->view->ShowAdminVendedores($vend, $inv, $admin);
+        $this->view->ShowLoggedVendedores($vend, $inv, $admin);
     }
 
-    function AdminAutosVendedor($params = null)
+    function LoggedAutosVendedor($params = null)
     {
         $this->CheckLoggedIn();
         $id_vendedor = $params[':ID'];
         $autosvend = $this->model->GetAutosVendedor($id_vendedor);
-        $this->view->ShowAdminAutosVendedor($autosvend);
+        $this->view->ShowLoggedAutosVendedor($autosvend);
     }
 
     function AbmAdmin()
@@ -114,7 +114,7 @@ class TablaAdminController
         $detalle = $_POST['input_detalle'];
 
         $this->model->InsertAuto($modelo, $año, $kms, $potencia, $peso, $consumo, $detalle, $id_vendedor);
-        $this->view->ShowAdminHomeLoc();
+        $this->view->ShowLoggedHomeLoc();
     }
 
     function DeleteAuto($params = null)
@@ -122,7 +122,7 @@ class TablaAdminController
         $this->CheckLoggedIn();
         $id_auto = $params[':ID'];
         $this->model->DeleteAuto($id_auto);
-        $this->view->ShowAdminHomeLoc();
+        $this->view->ShowLoggedHomeLoc();
     }
 
     function DetalleAutoLogged($params = NULL){
@@ -151,7 +151,7 @@ class TablaAdminController
         $id_vendedor = $_POST['input_vendedor'];
         $id_auto = $_POST['input_idauto'];
         $this->model->ModificarAuto($modelo, $año, $kms, $potencia, $peso, $consumo, $detalle, $id_vendedor, $id_auto);
-        $this->view->ShowAdminHomeLoc();
+        $this->view->ShowLoggedHomeLoc();
     }
 
     function EditarAuto($params = null)
@@ -180,7 +180,7 @@ class TablaAdminController
         $email = $_POST['input_email'];
 
         $this->model->InsertVendedor($nombre, $edad, $ciudad, $email);
-        $this->view->ShowAdminVendLoc();
+        $this->view->ShowLoggedVendLoc();
     }
 
     function ModificaVendedor()
@@ -194,7 +194,7 @@ class TablaAdminController
         $id_vendedor = $_POST['input_idvendedor'];
 
         $this->model->ModificarVendedor($nombre, $edad, $ciudad, $email, $id_vendedor);
-        $this->view->ShowAdminVendLoc();
+        $this->view->ShowLoggedVendLoc();
     }
 
     function DeleteVendedor($params = null)
@@ -202,7 +202,7 @@ class TablaAdminController
         $this->CheckLoggedIn();
         $id_vendedor = $params[':ID'];
         $this->model->DeleteVendedor($id_vendedor);
-        $this->view->ShowAdminVendLoc();
+        $this->view->ShowLoggedVendLoc();
     }
 
     function DeleteUser($params = null)

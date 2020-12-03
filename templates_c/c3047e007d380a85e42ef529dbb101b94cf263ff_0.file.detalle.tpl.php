@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 23:54:27
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 02:39:42
   from 'C:\xampp\htdocs\web2\TPE\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc81b2378bda4_32061090',
+  'unifunc' => 'content_5fc841de928376_31248412',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3047e007d380a85e42ef529dbb101b94cf263ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\detalle.tpl',
-      1 => 1606949662,
+      1 => 1606959570,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc81b2378bda4_32061090 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc841de928376_31248412 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headervendedor.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -72,7 +72,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </h4>
 <h1 class="text-center bg-success text-white">Comentarios</h1>
 
-<div style="width: 30rem;">
+<div style="width: 50rem;">
     <?php $_smarty_tpl->_subTemplateRender('file:vue/comments.vue', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </div>
@@ -86,7 +86,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >   
 
     <?php if (($_smarty_tpl->tpl_vars['logged']->value == 1)) {?>
-        <span class="badge badge-dark"></span> <input id="comentario" type="text" size="30" maxlength="30" placeholder="Deje su comentario">
+        <span class="badge badge-dark"></span> <input id="comentario" type="text" size="100" maxlength="100" placeholder="Deje su comentario">
         <label>Puntaje</label>
         <select id="puntuacion">
             <option value="1">1</option>

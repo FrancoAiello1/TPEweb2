@@ -56,7 +56,7 @@
                                 <td><button type="button" class="btn btn-outline-danger"><a href="deletev/{$vendedor->id_vendedor}">Borrar</a></button></td>
                                 <td><button type="button" class="btn btn-outline-warning"><a href="editVend/{$vendedor->id_vendedor}">Editar</a></button></td>
                             {/if}
-                            <td><button type="button" class="btn btn-outline-success"><a href="autosvendedoradmin/{$vendedor->id_vendedor}">Ver autos que vende</a></button></td>
+                            <td><button type="button" class="btn btn-outline-success"><a href="autosvendedorlogged/{$vendedor->id_vendedor}">Ver autos que vende</a></button></td>
                         </tr>
                     {/foreach}
                 </tbody>

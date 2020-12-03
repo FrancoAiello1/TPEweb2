@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 21:44:32
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 02:40:52
   from 'C:\xampp\htdocs\web2\TPE\templates\editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc559b098fb55_52520949',
+  'unifunc' => 'content_5fc84224cb4b40_08058508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16ced14ac19fa93c12d32e7fcf5c4eb007ea7e73' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\editar.tpl',
-      1 => 1606326479,
+      1 => 1606959638,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc559b098fb55_52520949 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc84224cb4b40_08058508 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <h2 class="text-center bg-danger text-white">MODIFICAR AUTOMOTOR</h2>
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['auto']->do_else = false;
             </div>
             <label for="detalle">Detalle</label>
             <div>
-                <input id="detalle" name="input_detalle" value="<?php echo $_smarty_tpl->tpl_vars['auto']->value->detalles;?>
+                <input id="detalle" size="100" name="input_detalle" value="<?php echo $_smarty_tpl->tpl_vars['auto']->value->detalles;?>
 " />
             </div>
             <label for="vendedor">Vendedor</label>

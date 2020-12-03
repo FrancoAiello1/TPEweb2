@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="adminhome">Tandil Automotores</a>
+        <a class="navbar-brand" href="loggedhome">Tandil Automotores</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <div class="nav-boton">
-                    <a class="btn btn-light" href="adminhome">Inicio</a>
+                    <a class="btn btn-light" href="loggedhome">Inicio</a>
                 </div>
                 <div class="nav-boton">
                     <a class="btn btn-light" href="logout">Desloguearse</a>
                 </div>
                 <div class="nav-boton">
-                    <a class="btn btn-light" href="adminvendedores">Vendedores</a>
+                    <a class="btn btn-light" href="loggedvendedores">Vendedores</a>
                 </div>
             </ul>
         </div>

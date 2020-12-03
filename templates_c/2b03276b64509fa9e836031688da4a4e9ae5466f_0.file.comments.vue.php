@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-03 00:18:41
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 02:39:42
   from 'C:\xampp\htdocs\web2\TPE\templates\vue\comments.vue' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc820d1abcfe7_26819879',
+  'unifunc' => 'content_5fc841de9ee512_24702209',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b03276b64509fa9e836031688da4a4e9ae5466f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\vue\\comments.vue',
-      1 => 1606951119,
+      1 => 1606959549,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc820d1abcfe7_26819879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc841de9ee512_24702209 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <section id="app-comments">
 

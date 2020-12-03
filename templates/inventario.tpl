@@ -2,7 +2,7 @@
 
 <h2 class="text-center bg-danger text-white">NUESTROS AUTOMOTORES</h2>
 
-<table class="table" align="center" border=1px, solid, black>
+<table class="table" align="center" >
     <thead>
         <tr>
             <th>Modelo</th>

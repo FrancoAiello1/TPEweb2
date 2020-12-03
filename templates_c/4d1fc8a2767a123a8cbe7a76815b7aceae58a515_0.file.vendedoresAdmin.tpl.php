@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-01 23:50:31
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 01:59:38
   from 'C:\xampp\htdocs\web2\TPE\templates\vendedoresAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc6c8b770db01_81584489',
+  'unifunc' => 'content_5fc8387a0cc060_42255504',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d1fc8a2767a123a8cbe7a76815b7aceae58a515' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\vendedoresAdmin.tpl',
-      1 => 1606863025,
+      1 => 1606957175,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc6c8b770db01_81584489 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc8387a0cc060_42255504 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if (($_smarty_tpl->tpl_vars['admin']->value[0]->admin == true)) {?>
     <div class="nav-boton">
@@ -92,7 +92,7 @@ $_smarty_tpl->tpl_vars['vendedor']->do_else = false;
                                 <td><button type="button" class="btn btn-outline-warning"><a href="editVend/<?php echo $_smarty_tpl->tpl_vars['vendedor']->value->id_vendedor;?>
 ">Editar</a></button></td>
                             <?php }?>
-                            <td><button type="button" class="btn btn-outline-success"><a href="autosvendedoradmin/<?php echo $_smarty_tpl->tpl_vars['vendedor']->value->id_vendedor;?>
+                            <td><button type="button" class="btn btn-outline-success"><a href="autosvendedorlogged/<?php echo $_smarty_tpl->tpl_vars['vendedor']->value->id_vendedor;?>
 ">Ver autos que vende</a></button></td>
                         </tr>
                     <?php
