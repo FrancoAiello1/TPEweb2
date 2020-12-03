@@ -35,7 +35,7 @@
     {include 'vue/comments.vue'}
 </div>
 
-<form method="POST" id="form-comentario">
+<form method="post" id="form-comentario">
     <input id="id_auto" type="hidden" value={$auto->id_auto}>
     <input id="usuario" type="hidden" value="{$id_usuario[0]->id}">
     <input id="admin" type="hidden" value={$admin[0]->admin}>   
@@ -52,7 +52,7 @@
         </select>
 
     
-        <input class="btn btn-link" type="submit" value="Comentar">
+        <button class="btn btn-dark" id="button-addcomment" type="submit">Comentar</button>
      {else}
         <p>¡Para comentar, debe resgistrarse!
     {/if}

@@ -34,14 +34,4 @@ class TablaView{
     function ShowHomeLoc(){
         header("Location: " . BASE_URL . "home");
     }
-
-    function ShowDetalle($det,$admin,$logged){
-        $smarty = new Smarty();
-        $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('detalle_s', $det);
-        $smarty->assign('admin', $admin);
-        $smarty->assign('logged', $logged);
-        $smarty->assign('id_usuario', 0);
-        $smarty->display('templates/detalle.tpl');
-    }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 16:15:27
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 23:54:27
   from 'C:\xampp\htdocs\web2\TPE\templates\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc7af8f83dab0_47906059',
+  'unifunc' => 'content_5fc81b2378bda4_32061090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3047e007d380a85e42ef529dbb101b94cf263ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\detalle.tpl',
-      1 => 1606922116,
+      1 => 1606949662,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc7af8f83dab0_47906059 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc81b2378bda4_32061090 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:headervendedor.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -77,7 +77,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 ?>
 </div>
 
-<form method="POST" id="form-comentario">
+<form method="post" id="form-comentario">
     <input id="id_auto" type="hidden" value=<?php echo $_smarty_tpl->tpl_vars['auto']->value->id_auto;?>
 >
     <input id="usuario" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['id_usuario']->value[0]->id;?>
@@ -97,7 +97,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </select>
 
     
-        <input class="btn btn-link" type="submit" value="Comentar">
+        <button class="btn btn-dark" id="button-addcomment" type="submit">Comentar</button>
      <?php } else { ?>
         <p>¡Para comentar, debe resgistrarse!
     <?php }?>

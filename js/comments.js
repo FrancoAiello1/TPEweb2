@@ -10,7 +10,7 @@ let app = new Vue({
         comentarios: []
     },
     methods: {
-        delete: function (id) {
+        borrar: function (id) {
             deleteComment(id);
         }
     }
@@ -44,7 +44,7 @@ function loadComments() {
 }
 
 function deleteComment(id) {
-    fetch('api/deleteComment/' + id, {
+    fetch('http://localhost/web2/TPE/api/deleteComentario/' + id, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     })
@@ -56,34 +56,31 @@ function deleteComment(id) {
         })
         .catch(error => console.log(error));
 }
-
 document.querySelector("#form-comentario").addEventListener('submit', addComment);
 
 function addComment() {
-    event.preventDefault();
-
     let auto = document.getElementById("id_auto").value;
-    let comment = document.getElementById("comentario").value;
+    let comentario = document.getElementById("comentario").value;
     let puntaje = document.getElementById("puntuacion").value;
     let usuario = document.getElementById("usuario").value;
     console.log(auto);
-    console.log(comment);
+    console.log(comentario);
     console.log(puntaje);
     console.log(usuario);
 
     let comentarioCompleto = {
-        "comentario": comment,
+        "comentario": comentario,
         "puntaje": puntaje,
         "id_usuario": usuario,
         "id_auto": auto,
     }
 
-    if (comentario == " " || puntaje == " ") {
+    if (comentario == "") {
         alert("Debe llenar todos los campos para poder postear un comentario");
         return false;
     }
     else {
-        fetch('api/comentario', {
+        fetch('http://localhost/web2/TPE/api/addComentario', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(comentarioCompleto)
@@ -92,8 +89,10 @@ function addComment() {
                 console.log(response);
             })
             .then(function () {
-                document.getElementById("comentario").value = " ";
                 loadComments();
+                e.preventDefault();
+                document.getElementById("comentario").value = " ";
+                
             })
             .catch(error => console.log(error));
     }

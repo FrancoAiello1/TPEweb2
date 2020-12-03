@@ -15,7 +15,6 @@ class TablaAdminController
         $this->view = new TablaAdminView();
         $this->model = new TablaAdminModel();
 
-        $this->view2 = new TablaView();
         $this->model2 = new TablaModel();
     }
 
@@ -96,8 +95,10 @@ class TablaAdminController
         $detalleauto = $this->model2->GetAuto($id_auto);
         $admin = array(new \stdClass);
         $admin[0]->admin=0;
+        $id_user = array(new \stdClass);
+        $id_user[0]->id=0;
         $logged = 0;
-        $this->view2->ShowDetalle($detalleauto,$admin,$logged);
+        $this->view->ShowDetalles($detalleauto,$admin,$id_user,$logged);
     }
 
     function InsertarAuto()

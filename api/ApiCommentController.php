@@ -59,7 +59,7 @@ class ApiCommentController
         $this->view->response("El comentario con el id número {$id} fue borrado", 200);
     }
 
-    public function addComment($params = [])
+    public function addComment()
     {
         $body = $this->getData();
 
@@ -68,7 +68,7 @@ class ApiCommentController
         $usuario = $body->id_usuario;
         $auto = $body->id_auto;
         $completo = $this->model->insertComment($comentario, $puntaje, $usuario, $auto);
-
+        
         if ($completo) {
             $this->view->response("Se agrego el comentario", 200);
         } else {

@@ -6,10 +6,10 @@ require_once 'api/ApiCommentController.php';
 $r = new Router();
 
 $r->addRoute('comentario/:ID', 'GET', 'ApiCommentController', 'comment');
-$r->addRoute('comentarios', 'GET', 'ApiCommentController', 'getAllComments'); //trae todos los comentarios
+$r->addRoute('comentarios', 'GET', 'ApiCommentController', 'getAllComments');
 $r->addRoute('comentarios/:ID', 'GET', 'ApiCommentController', 'getComment');
-$r->addRoute('deleteComentario/:ID', 'GET', 'ApiCommentController', 'deleteComment'); //borra un comentario
-$r->addRoute('addComentario', 'POST', 'ApiCommentController', 'addComment'); //agrega un comentario
+$r->addRoute('deleteComentario/:ID', 'DELETE', 'ApiCommentController', 'deleteComment');
+$r->addRoute('addComentario', 'POST', 'ApiCommentController', 'addComment');
 
 //run
 $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);

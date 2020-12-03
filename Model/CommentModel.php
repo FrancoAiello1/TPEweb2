@@ -38,6 +38,6 @@ class CommentModel{
     function insertComment($comentario, $puntaje, $id_usuario, $id_auto)
     {
         $sentencia = $this->db->prepare('INSERT INTO comentario (comentario, puntaje, id_usuario, id_auto) VALUES (?,?,?,?)');
-        return $sentencia->execute([$comentario, $puntaje, $id_usuario, $id_auto]);
+        return $sentencia->execute((array($comentario, $puntaje, $id_usuario, $id_auto)));
     }
 }
