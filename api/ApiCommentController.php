@@ -37,7 +37,7 @@ class ApiCommentController
     }
 
 
-    public function comment($params = [])
+/*     public function comment($params = [])
     {
         $id = $params[':ID'];
         $a = $this->model->selectComment($id);
@@ -45,7 +45,7 @@ class ApiCommentController
             $this->view->response($a, 200);
         else
             $this->view->response("no existe el comentario con el id {$id}", 404);
-    }
+    } */
 
     public function deleteComment($params = [])
     {
